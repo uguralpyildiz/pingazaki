@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pingazaki</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #hiddenAudio {
+            display: none;
+        }
+
+        #hiddenDiv {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: lightgray;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="playButton">Tıkla</button>
+    <div id="hiddenDiv">Selam</div>
+    <iframe id="hiddenAudio" src="https://www.youtube.com/embed/j0TUZdBmr6Q?autoplay=1&mute=1"
+        allow="autoplay"></iframe>
+
+    <script>
+        document.getElementById("playButton").addEventListener("click", function () {
+            let iframe = document.getElementById("hiddenAudio");
+            iframe.src = "https://www.youtube.com/embed/j0TUZdBmr6Q?autoplay=1&mute=0";
+            document.getElementById("hiddenDiv").style.display = "block";
+            document.getElementById("playButton").style.display = "none";
+        });
+    </script>
+</body>
+
+</html>
